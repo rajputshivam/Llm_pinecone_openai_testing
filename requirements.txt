@@ -1,0 +1,12 @@
+langchain
+streamlit
+pypdf
+
+langchain-pinecone
+langchain-openai
+python-dotenv
+langchain-community
+beautifulsoup4
+
+
+- e.
