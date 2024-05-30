@@ -5,7 +5,7 @@ from langchain_community.vectorstores import Pinecone as PineconeLangChain
 from pinecone import Pinecone
 from langchain_openai import OpenAIEmbeddings
 from dotenv import load_dotenv
-
+from consts import INDEX_NAME
 load_dotenv()
 
 pc = Pinecone(api_key=os.environ.get("PINECONE_API_KEY"))
@@ -28,7 +28,7 @@ def ingest_docs() -> None:
     print(f"Going to insert {len(documents)} to Pinecone")
 
     embeddings = OpenAIEmbeddings()
-    PineconeLangChain.from_documents(documents=documents, embedding=embeddings, index_name="testing")
+    PineconeLangChain.from_documents(documents=documents, embedding=embeddings, index_name=INDEX_NAME)
     print("-------------Added vector to Pinecone---------------")
 
 
